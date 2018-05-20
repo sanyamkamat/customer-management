@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+  - "node"
+before_script:
+  - npm install -g angular-cli
+install:
+    - npm install -g angular-cli
+    - npm install
+script:
+  - ng test
+deploy:
+  provider: heroku
+  api_key:
+    secure: NeZLA9yOZm3XnVQfXCwRpf0UOhxzmNf9YiygxYzyHa2uxvYG1cBrevFcffbDw0cRdo73aHbbCXamLsS4vFtzKkZrMoaDAy9Ik/HwflSIYzNPk/tkIiubhqhhlOFEZ/WMJ/5JI6yYeYS4KaorAUW5mnVCGS2/Zv6im4qBAnQ/VHzcku5mNFnyIpalwHXcHRv08h33rLldLfXyQHC05Z4XxDvgeJggGTi5GSTJd4vB5WFmi4lBOkeB7mBVY/kF59K17Gk7kw7aGUikXb1ojKlHr8u2i94NhppCoe5vyIHKxSGeMUw2Kir4AglolaS7cg9KveVMji9Jw+0gtfKl2E66uV6aBg5k5l03iN/3LEV1nQHPbgPtzLo3akSmH3JbcsYKQiYj4G774lTS4WWpuF99Q/AIK0urR2Kf6/lvIRNpjnllcwp2mWBP6OrTldg1SDtUjhr7kRURq+svXBfHeu9zl2EtsvZoOtoldZOC1G90mVe4BoZSePoa3jK90rXMwrvZxEszqPF2C9oPQjTmXXWjieMttrWkOzbj8aM4DapO4w4c6obyiiwCghjpauxwBRP2rEJNGcQLX/xFea88PsYLJT+AS3ZduIDabq5Kqh1815cz2R/aGBsRDo/9t8T00iK9HVf+ebutNMQzulKcweXZzQe22QfQOIsDj9Ni4WyGDE4=
+  app: customer-management
+  on:
+    repo: sanyamkamat/customer-management
