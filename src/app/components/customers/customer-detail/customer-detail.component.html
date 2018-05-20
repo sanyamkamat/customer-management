@@ -1,0 +1,80 @@
+<div class="container" *ngIf="pageLoaded">
+  <h1>
+    Customer Details
+  </h1>
+  <div class="form-group row">
+    <label for="firstName" class="col-2 col-form-label">First Name</label>
+    <div class="col-10">
+      <input class="form-control" type="text" placeholder="Enter first name"
+             [(ngModel)]="customer.name.first"
+             id="firstName"
+             name="firstName">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="lastName" class="col-2 col-form-label">Last Name</label>
+    <div class="col-10">
+      <input class="form-control" type="text" placeholder="Enter last name"
+             [(ngModel)]="customer.name.last"
+             id="lastName"
+             name="lastName">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="birthday" class="col-2 col-form-label">Birthday</label>
+    <div class="col-10">
+      <input class="form-control" type="text" placeholder="Enter birthday"
+             [(ngModel)]="customer.birthday"
+             id="birthday"
+             name="birthday">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-2 col-form-label">Gender</label>
+    <div class="col-10">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="gender" id="gender_man"
+               [(ngModel)]="customer.gender"
+               value="m">
+        <label class="form-check-label" for="gender_man">
+          Man
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="gender" id="gender_woman"
+               [(ngModel)]="customer.gender"
+               value="w">
+        <label class="form-check-label" for="gender_woman">
+          Woman
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="lastContact" class="col-2 col-form-label">Last Contact</label>
+    <div class="col-10">
+      <input class="form-control" type="text" placeholder="Enter last contact"
+             [(ngModel)]="customer.lastContact"
+             id="lastContact"
+             name="lastContact">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="customerLifetimeValue" class="col-2 col-form-label">Life Time Value</label>
+    <div class="col-10">
+      <input class="form-control" type="number" placeholder="Enter life time value"
+             [(ngModel)]="customer.customerLifetimeValue"
+             id="customerLifetimeValue"
+             name="customerLifetimeValue">
+    </div>
+  </div>
+  <div>
+    <button class="btn btn-primary mr-2" (click)="goBack()">Back</button>
+    <button class="btn btn-primary" (click)="save()">Save</button>
+  </div>
+</div>

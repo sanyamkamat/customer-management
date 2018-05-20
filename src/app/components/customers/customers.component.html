@@ -1,0 +1,46 @@
+<div class="table-responsive" *ngIf="customers.length">
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Customer ID</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Birthday</th>
+      <th>Gender</th>
+      <th>Last Contact</th>
+      <th>Life Time Value</th>
+      <th></th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let customer of customers; let i = index">
+      <td>{{ customer.id }}</td>
+      <td>{{ customer.name?.first }}</td>
+      <td>{{ customer.name?.last }}</td>
+      <td>{{ customer.birthday}}</td>
+      <td>{{ customer.gender | gender}}</td>
+      <td>{{ customer.lastContact | date }}</td>
+      <td>{{ customer.customerLifetimeValue }}</td>
+      <td>
+        <button type="button"
+                class="btn btn-info"
+                routerLink="/customer/{{customer.id}}">Edit
+        </button>
+      </td>
+      <td>
+        <button type="button" class="btn btn-danger" (click)="onDelete(customer.id)">Delete</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="jumbotron text-center" *ngIf="!customers.length">
+  <p>No customers found!</p>
+  <p>Please add customers using the "Add customer" button</p>
+</div>
+
+<div class="text-right">
+  <button type="submit" class="btn btn-primary" routerLink="/addCustomer">Add customer</button>
+</div>
