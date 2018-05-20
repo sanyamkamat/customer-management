@@ -11,7 +11,7 @@ import { CustomerService } from "@services/customer/customer.service";
 })
 export class CustomersComponent implements OnInit {
 
-  private customers: Customer[] = [];
+  customers: Customer[] = [];
 
   constructor(private customerService: CustomerService,
               private toastrService: ToastrService) {
